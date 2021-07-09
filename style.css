@@ -176,7 +176,7 @@ p {
 	margin-right: 10px;
 }
 
-#menuButton {
+#tabButton {
 	height: 60px;
 	width: 60px;
 	background-color: rgb(33, 19, 13);
@@ -185,7 +185,7 @@ p {
 	transition: 0.2s;
 }
 
-#menuButton:hover {
+#tabButton:hover {
 	scale: 1.2;
 }
 
@@ -208,7 +208,7 @@ p {
 		min-height: 0 !important;
 		width: 100% !important;
 	}
-	#menuButton {
+	#tabButton {
 		visibility: visible;
 	}
 }
@@ -224,7 +224,7 @@ p {
 	width: 300px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background-color: #5decf6;
+	background-color: #a9f1f7;
 	flex-shrink: 0;
 	display: flex;
 	flex-flow: column nowrap;
@@ -267,6 +267,23 @@ p {
 	scale: 1.2;
 }
 
+#addProjectButton{
+	width: 200px;
+	margin-bottom: 10px;
+	padding: 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	border: 2px black solid;
+	border-radius: 10px;
+	transition: 0.3s;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .projectButton {
 	width: 280px;
 	margin-bottom: 10px;
@@ -280,7 +297,8 @@ p {
 }
 
 .menuButton:hover,
-.projectButton:hover {
+.projectButton:hover,
+#addProjectButton:hover {
 	border-radius: 0;
 	box-shadow: 0 0 1px 1px black;
 }
