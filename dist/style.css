@@ -224,7 +224,7 @@ p {
 	width: 300px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background-color: #a9f1f7;
+	background-color: #83a1a3;
 	flex-shrink: 0;
 	display: flex;
 	flex-flow: column nowrap;
@@ -251,6 +251,7 @@ p {
 	border-radius: 10px;
 	transition: 0.2s;
 	font-size: large;
+	cursor: pointer;
 }
 
 .menuIcon {
@@ -269,16 +270,18 @@ p {
 }
 
 #addProjectButton {
-	width: 200px;
+	width: 280px;
 	margin-bottom: 10px;
 	padding: 5px;
-	background-color: #81f72a;
-	border-color: black;
+	background-color: #eff1ed;
+	border: 2px black solid;
 	border-radius: 10px;
 	transition: 0.1s;
-	text-align: center;
-	font-size: 25px;
+	display: flex;
+	flex-flow: row nowrap;
+	font-size: 30px;
 	font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+	cursor: pointer;
 }
 
 .projectButton {
@@ -298,7 +301,7 @@ p {
 .projectButton:hover,
 #addProjectButton:hover {
 	border-radius: 0;
-	box-shadow: 0 0 1.5px 1.5px black;
+	box-shadow: 0 0 1px 1px rgb(107, 107, 107);
 }
 
 #footer {
