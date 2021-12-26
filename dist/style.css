@@ -297,8 +297,21 @@ p {
 	font-size: large;
 }
 
+.todoButton{
+	width: calc(100% - 34px);
+	margin: 10px;
+	padding: 5px;
+	background-color: white;
+	border: 2px black solid;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: 30px 1fr 30px;
+	transition: 0.2s;
+	font-size: large;
+}
 .menuButton:hover,
 .projectButton:hover,
+.todoButton:hover,
 #addProjectButton:hover {
 	border-radius: 0;
 	box-shadow: 0 0 1px 1px rgb(107, 107, 107);
