@@ -1,1 +1,1 @@
-console.log("Hello2");
+(()=>{const t=document.getElementById("taskForm");document.getElementById("addTaskButton").addEventListener("click",(function(){t.style.display="flex"})),window.addEventListener("click",(function(e){e.target==t&&(t.style.display="none")}))})();
