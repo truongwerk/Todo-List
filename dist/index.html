@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="taskForm">
-			<form id="newTaskForm">
+			<form id="newTaskForm" onsubmit="return false;">
 				<h1>Add New Task</h1>
 				<label for="inputTask">Task:</label>
 				<input type="text" id="inputTask" required />
@@ -20,11 +20,9 @@
 				<input type="text" id="inputDescription" />
 				<label for="addtoProject">Project:</label>
 				<select id="addToProject">
-					<option value="Not Read">None</option>
-					<option value="Reading">Still reading</option>
-					<option value="Read">Finished it</option>
+					<option disabled selected value>--Select a Project--</option>
 				</select>
-				<button id="input">New Book</button>
+				<button id="input">New Todo</button>
 			</form>
 		</div>
 		<div id="page">
@@ -118,7 +116,7 @@
 				/></a>
 			</div>
 		</div>
-		<!-- <script src="../src/index.js"></script> -->
-		<script src="main.js"></script>
+		<script src="../src/index.js"></script>
+		<!-- <script src="main.js"></script> -->
 	</body>
 </html>
