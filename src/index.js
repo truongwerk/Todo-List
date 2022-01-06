@@ -36,3 +36,10 @@ function submitNewTodo() {
 	document.getElementById("addToProject").value = null;
 	console.table(myTodo);
 }
+
+// Display Task
+function displayTask(myTodo) {
+	for (i = 0; i < myTodo.length; i++) {
+		
+	}
+}
