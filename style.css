@@ -135,7 +135,6 @@ p {
 	overflow-wrap: break-word;
 }
 
-
 #taskForm {
 	display: none;
 	position: fixed;
@@ -154,10 +153,39 @@ p {
 	display: flex;
 	flex-flow: column nowrap;
 	padding: 1%;
-	border: yellow 2px solid;
+	border: #21130d 3px solid;
 	border-radius: 10%;
-	background-color: rgb(95, 199, 188);
+	background-color: #83a1a3;
 	text-align: center;
+}
+
+#newTaskForm h1 {
+	margin: 7%;
+	font-size: xx-large;
+	font-weight: bolder;
+}
+#newTaskForm label{
+	font-size: x-large;
+	font-weight: bold;
+}
+#newTaskForm input {
+	margin: 5%;
+	font-size: x-large;
+	padding: 2px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+#addToProject {
+	margin: 5%;
+	font-size: x-large;
+	text-align: center;
+	border-radius: 10px;
+}
+#input {
+	font-weight: bolder;
+	margin: 5%;
+	font-size: x-large;
+	border-radius: 50px;
 }
 
 #page {
@@ -212,7 +240,7 @@ p {
 }
 
 #tabButton:hover {
-	scale: 1.2;
+	transform: scale(1.2);
 }
 
 #body {
