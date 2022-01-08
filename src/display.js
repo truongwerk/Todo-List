@@ -1,11 +1,19 @@
 import differenceInCalendarDays from "date-fns/differenceInCalendarDays";
+import isSameWeek from "date-fns/isSameWeek";
+import showSubContent from "./taskFunction";
 export default displayTask;
 
 function displayTask(myTodo, mode) {
 	const task = document.getElementById("task");
 	removeAllChildNodes(task);
-	if (mode == "all") {
+	if (mode == "allButton") {
 		displayAll(myTodo);
+	}
+	if (mode == "todayButton") {
+		displayToday(myTodo);
+	}
+	if (mode == "thisWeekButton") {
+		displayThisWeek(myTodo);
 	}
 }
 
@@ -15,10 +23,31 @@ function removeAllChildNodes(parent) {
 	}
 }
 
-//Display All
+//Display mode All
 function displayAll(myTodo) {
 	for (let i = 0; i < myTodo.length; i++) {
 		displayEachTask(myTodo[i], i);
+		showSubContent(i);
+	}
+}
+
+//Display mode today
+function displayToday(myTodo) {
+	for (let i = 0; i < myTodo.length; i++) {
+		if (new Date().getDate() == new Date(myTodo[i].targetDate).getDate()) {
+			displayEachTask(myTodo[i], i);
+			showSubContent(i);
+		}
+	}
+}
+
+//Display mode week
+function displayThisWeek(myTodo) {
+	for (let i = 0; i < myTodo.length; i++) {
+		if (isSameWeek(new Date(), new Date(myTodo[i].targetDate))) {
+			displayEachTask(myTodo[i], i);
+			showSubContent(i);
+		}
 	}
 }
 
@@ -37,7 +66,7 @@ function displayEachTask(todo, i) {
 
 	let taskComplete = document.createElement("img");
 	taskComplete.className = "completeIcon";
-	taskComplete.id = "task1Complete";
+	taskComplete.id = "task" + i + "Complete";
 	if (todo.completed == true) {
 		taskComplete.src = "images/checkIcon.svg";
 		taskComplete.alt = "checkIcon";
@@ -135,5 +164,3 @@ function displayEachTask(todo, i) {
 	taskDescription.innerText = "Description: " + todo.description;
 	subContent.appendChild(taskDescription);
 }
-
-//

@@ -15,9 +15,9 @@
 				<label for="inputTask">Task:</label>
 				<input type="text" id="inputTask" required />
 				<label for="inputDate">Target Date:</label>
-				<input type="date" id="inputDate"/>
+				<input type="date" id="inputDate" />
 				<label for="inputDescription">Description:</label>
-				<input type="text" id="inputDescription"/>
+				<input type="text" id="inputDescription" />
 				<label for="addToProject">Project:</label>
 				<select id="addToProject">
 					<option disabled selected value>--Select a Project--</option>
@@ -50,7 +50,7 @@
 					</div>
 					<h1>Projects:</h1>
 					<div id="project">
-						<div class="projectButton" id="Coding">
+						<div class="menuButton projectButton" id="project0">
 							<p class="projectNumericalOrder">1</p>
 							<p class="menuText">Coding</p>
 							<img
@@ -65,44 +65,7 @@
 					</div>
 				</div>
 				<div id="main">
-					<div id="task">
-						<div class="taskButton" id="task1">
-							<div class="mainContent" id="task1Main">
-								<img
-									src="images/checkIcon.svg"
-									alt="checkIcon"
-									class="completeIcon"
-									id="task1Complete"
-								/>
-								<p class="taskProject" id="task1Project">1</p>
-								<p class="taskContent" id="task1Content">
-									Lorem ipsum dolor sit amet consecte.
-								</p>
-								<p class="taskDueDate" id="task1DueDate">25 days</p>
-								<img
-									class="deleteIcon"
-									id="tast1Delete"
-									src="images/deleteIcon.svg"
-									alt="deleteIcon"
-								/>
-							</div>
-							<div class="subContent" id="task1Sub">
-								<div class="targetEdit">
-									<p id="task1TargetDate">Target Date: 22-1-2022</p>
-									<img
-										class="editIcon"
-										id="task1Edit"
-										src="images/editIcon.svg"
-										alt="editIcon"
-									/>
-								</div>
-								<p id="task1Description">
-									Description: Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Provident, officiis.
-								</p>
-							</div>
-						</div>
-					</div>
+					<div id="task"></div>
 					<div id="controlPanel">
 						<button id="addTaskButton">Add Task</button>
 						<button>Delete All Tasks</button>
