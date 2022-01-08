@@ -1,3 +1,6 @@
+//Import display task
+import displayTask from "./display";
+
 // Display and hide Task Form
 const taskForm = document.getElementById("taskForm");
 const addTaskButton = document.getElementById("addTaskButton");
@@ -18,6 +21,7 @@ function todo(task, targetDate, description, project) {
 	this.targetDate = targetDate;
 	this.description = description;
 	this.project = project;
+	this.completed = true;
 }
 
 const newTaskForm = document.getElementById("newTaskForm");
@@ -34,12 +38,11 @@ function submitNewTodo() {
 	document.getElementById("inputDate").value = null;
 	document.getElementById("inputDescription").value = null;
 	document.getElementById("addToProject").value = null;
+	displayTask(myTodo,'all');
 	console.table(myTodo);
 }
 
-// Display Task
-function displayTask(myTodo) {
-	for (i = 0; i < myTodo.length; i++) {
-		
-	}
-}
+
+// import isAfter from "date-fns/isAfter";
+// var result2 = isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11));
+// console.log(result2);

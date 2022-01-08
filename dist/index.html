@@ -15,13 +15,13 @@
 				<label for="inputTask">Task:</label>
 				<input type="text" id="inputTask" required />
 				<label for="inputDate">Target Date:</label>
-				<input type="date" id="inputDate" />
+				<input type="date" id="inputDate"/>
 				<label for="inputDescription">Description:</label>
-				<input type="text" id="inputDescription" />
+				<input type="text" id="inputDescription"/>
 				<label for="addToProject">Project:</label>
 				<select id="addToProject">
 					<option disabled selected value>--Select a Project--</option>
-					<option value="project0">Coding</option>
+					<option value="Coding">Coding</option>
 				</select>
 				<button id="input">Add</button>
 			</form>
@@ -69,12 +69,12 @@
 						<div class="taskButton" id="task1">
 							<div class="mainContent" id="task1Main">
 								<img
-									src="images/uncheckIcon.svg"
-									alt="uncheckIcon"
-									class="menuIcon"
-									id="task1Icon"
+									src="images/checkIcon.svg"
+									alt="checkIcon"
+									class="completeIcon"
+									id="task1Complete"
 								/>
-								<p class="projectNumericalOrder" id="task1Project">1</p>
+								<p class="taskProject" id="task1Project">1</p>
 								<p class="taskContent" id="task1Content">
 									Lorem ipsum dolor sit amet consecte.
 								</p>
@@ -83,11 +83,11 @@
 									class="deleteIcon"
 									id="tast1Delete"
 									src="images/deleteIcon.svg"
-									alt="delete-Coding"
+									alt="deleteIcon"
 								/>
 							</div>
 							<div class="subContent" id="task1Sub">
-								<div class="targetDateAndEditButton">
+								<div class="targetEdit">
 									<p id="task1TargetDate">Target Date: 22-1-2022</p>
 									<img
 										class="editIcon"
@@ -117,7 +117,7 @@
 				/></a>
 			</div>
 		</div>
-		<script src="../src/index.js"></script>
-		<!-- <script src="main.js"></script> -->
+		<!-- <script type="module" src="../src/index.js"></script> -->
+		<script src="main.js"></script>
 	</body>
 </html>
