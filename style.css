@@ -164,7 +164,7 @@ p {
 	font-size: xx-large;
 	font-weight: bolder;
 }
-#newTaskForm label{
+#newTaskForm label {
 	font-size: x-large;
 	font-weight: bold;
 }
@@ -308,6 +308,11 @@ p {
 	cursor: pointer;
 }
 
+.projectButton {
+	display: grid;
+	grid-template-columns: 30px 1fr 30px;
+}
+
 .menuIcon {
 	width: 30px;
 	height: 30px;
@@ -352,19 +357,6 @@ p {
 	cursor: pointer;
 }
 
-.projectButton {
-	width: 280px;
-	margin-bottom: 10px;
-	padding: 5px;
-	background-color: white;
-	border: 2px black solid;
-	border-radius: 10px;
-	display: grid;
-	grid-template-columns: 30px 1fr 30px;
-	transition: 0.2s;
-	font-size: large;
-}
-
 .taskButton {
 	width: calc(100% - 34px);
 	margin: 10px;
@@ -374,6 +366,7 @@ p {
 	border-radius: 10px;
 	transition: 0.2s;
 	font-size: large;
+	cursor: pointer;
 }
 
 .mainContent {
@@ -387,7 +380,6 @@ p {
 }
 
 .menuButton:hover,
-.projectButton:hover,
 .taskButton:hover,
 #addProjectButton:hover {
 	border-radius: 0;
@@ -395,7 +387,9 @@ p {
 }
 
 .subContent {
+	display: none;
 	margin-left: 30px;
+	transition: 0.2s;
 }
 
 .targetEdit {
