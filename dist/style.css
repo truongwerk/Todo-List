@@ -392,6 +392,12 @@ p {
 	transition: 0.2s;
 }
 
+.subContentShow{
+	display: block;
+	margin-left: 30px;
+	transition: 0.2s;
+}
+
 .targetEdit {
 	display: flex;
 	justify-content: space-between;

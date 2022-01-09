@@ -1,25 +1,31 @@
 import differenceInCalendarDays from "date-fns/differenceInCalendarDays";
 import isSameWeek from "date-fns/isSameWeek";
-import showSubContent from "./taskFunction";
 export default displayTask;
 
-function displayTask(myTodo, mode) {
+function displayTask(myTodo, mode, project) {
 	const task = document.getElementById("task");
+	const menuButton = document.querySelectorAll(".menuButton");
+	for (let i = 0; i < menuButton.length; i++) {
+		menuButton[i].style.color = null;
+		menuButton[i].style.borderColor = null;
+	}
+	const highlightButton = document.getElementById(mode);
+	highlightButton.style.color = "red";
+	highlightButton.style.borderColor = "orange";
 	removeAllChildNodes(task);
-	if (mode == "allButton") {
-		displayAll(myTodo);
-	}
-	if (mode == "todayButton") {
-		displayToday(myTodo);
-	}
-	if (mode == "thisWeekButton") {
-		displayThisWeek(myTodo);
-	}
-}
-
-function removeAllChildNodes(parent) {
-	while (parent.firstChild) {
-		parent.removeChild(parent.firstChild);
+	switch (mode) {
+		case "allButton":
+			displayAll(myTodo);
+			break;
+		case "todayButton":
+			displayToday(myTodo);
+			break;
+		case "thisWeekButton":
+			displayThisWeek(myTodo);
+			break;
+		default:
+			displayProjectTask(myTodo, project[mode[7]]);
+			break;
 	}
 }
 
@@ -27,7 +33,6 @@ function removeAllChildNodes(parent) {
 function displayAll(myTodo) {
 	for (let i = 0; i < myTodo.length; i++) {
 		displayEachTask(myTodo[i], i);
-		showSubContent(i);
 	}
 }
 
@@ -36,7 +41,6 @@ function displayToday(myTodo) {
 	for (let i = 0; i < myTodo.length; i++) {
 		if (new Date().getDate() == new Date(myTodo[i].targetDate).getDate()) {
 			displayEachTask(myTodo[i], i);
-			showSubContent(i);
 		}
 	}
 }
@@ -46,8 +50,23 @@ function displayThisWeek(myTodo) {
 	for (let i = 0; i < myTodo.length; i++) {
 		if (isSameWeek(new Date(), new Date(myTodo[i].targetDate))) {
 			displayEachTask(myTodo[i], i);
-			showSubContent(i);
 		}
+	}
+}
+
+//Display Project
+function displayProjectTask(myTodo, project) {
+	for (let i = 0; i < myTodo.length; i++) {
+		if (myTodo[i].project == project) {
+			displayEachTask(myTodo[i], i);
+		}
+	}
+}
+
+//Remove old task
+function removeAllChildNodes(parent) {
+	while (parent.firstChild) {
+		parent.removeChild(parent.firstChild);
 	}
 }
 

@@ -34,6 +34,6 @@ function taskSubmit() {
 	document.getElementById("inputTask").value = null;
 	document.getElementById("inputDate").value = null;
 	document.getElementById("inputDescription").value = null;
-	document.getElementById("addToProject").value = null;
+	// document.getElementById("addToProject").value = null;
 	return newTodo;
 }
