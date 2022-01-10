@@ -24,7 +24,7 @@ function displayTask(myTodo, mode, project) {
 			displayThisWeek(myTodo);
 			break;
 		default:
-			displayProjectTask(myTodo, project[mode[7]]);
+			displayProjectTask(myTodo, project[mode.slice(7)]);
 			break;
 	}
 }

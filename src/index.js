@@ -1,44 +1,41 @@
 import displayTask from "./display";
-import { showTaskForm, taskSubmit } from "./taskForm";
-import showSubContent from "./taskFunction";
+import taskForm from "./form";
+import taskFunction from "./taskFunction";
+export const getTodo = () => myTodo;
+export const setTodo = (newTodo) => (myTodo = newTodo);
+export const getProject = () => project;
+export const setProject = (newProject) => (project = newProject);
+export const getMode = () => mode;
+export const setMode = (newMode) => (mode = newMode);
 
+//Load data
 let myTodo = [];
 let mode = "allButton";
 let project = ["Coding"];
 if (window.localStorage.getItem("myTodo")) {
 	myTodo = JSON.parse(window.localStorage.getItem("myTodo"));
 }
+if (window.localStorage.getItem("project")) {
+	project = JSON.parse(window.localStorage.getItem("project"));
+}
+
+// First display
 displayTask(myTodo, mode, project);
 taskFunction();
-
-//Change display mode
-const menuButton = document.querySelectorAll(".menuButton");
-for (let i = 0; i < menuButton.length; i++) {
-	menuButton[i].addEventListener("click", function () {
-		for (let i = 0; i < menuButton.length; i++) {}
-		mode = menuButton[i].id;
-		displayTask(myTodo, mode, project);
-		taskFunction();
-	});
-}
+changeMode(myTodo);
 
 //Add task
-showTaskForm();
-const newTaskForm = document.getElementById("newTaskForm");
-newTaskForm.addEventListener("submit", submitNewTodo);
-function submitNewTodo() {
-	myTodo.push(taskSubmit());
-	displayTask(myTodo, mode, project);
-	console.table(myTodo);
-	taskFunction();
-	window.localStorage.setItem("myTodo", JSON.stringify(myTodo));
-	console.log(localStorage);
-}
+taskForm();
 
-//Task function
-function taskFunction() {
-	const task = document.querySelectorAll(".taskButton");
-	task.forEach((element) => {
-		showSubContent(element.id[4]);
-	});
+//Change display mode
+function changeMode(myTodo) {
+	const menuButton = document.querySelectorAll(".menuButton");
+	for (let i = 0; i < menuButton.length; i++) {
+		menuButton[i].addEventListener("click", function () {
+			for (let i = 0; i < menuButton.length; i++) {}
+			mode = menuButton[i].id;
+			displayTask(myTodo, mode, project);
+			taskFunction();
+		});
+	}
 }
