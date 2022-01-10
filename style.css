@@ -236,7 +236,7 @@ p {
 	background-color: rgb(33, 19, 13);
 	margin: 10px;
 	visibility: hidden;
-	transition: 0.2s;
+	transition:0.1s
 }
 
 #tabButton:hover {
@@ -303,7 +303,7 @@ p {
 	background-color: white;
 	border: 2px black solid;
 	border-radius: 10px;
-	transition: 0.2s;
+	transition:0.1s
 	font-size: large;
 	cursor: pointer;
 }
@@ -364,7 +364,7 @@ p {
 	background-color: white;
 	border: 2px black solid;
 	border-radius: 10px;
-	transition: 0.2s;
+	transition:0.1s
 	font-size: large;
 	cursor: pointer;
 }
@@ -389,13 +389,13 @@ p {
 .subContent {
 	display: none;
 	margin-left: 30px;
-	transition: 0.2s;
+	transition:0.1s
 }
 
 .subContentShow{
 	display: block;
 	margin-left: 30px;
-	transition: 0.2s;
+	transition:0.1s
 }
 
 .targetEdit {
