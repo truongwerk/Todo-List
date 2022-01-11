@@ -364,7 +364,7 @@ p {
 	background-color: white;
 	border: 2px black solid;
 	border-radius: 10px;
-	transition:0.1s
+	transition:0.1s;
 	font-size: large;
 	cursor: pointer;
 }
