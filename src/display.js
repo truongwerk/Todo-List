@@ -9,7 +9,11 @@ function displayTask(myTodo, mode, project) {
 		menuButton[i].style.color = null;
 		menuButton[i].style.borderColor = null;
 	}
-	const highlightButton = document.getElementById(mode);
+	let highlightButton = document.getElementById(mode);
+	if (highlightButton == null) {
+		highlightButton = document.getElementById("allButton");
+		mode = "allButton";
+	}
 	highlightButton.style.color = "red";
 	highlightButton.style.borderColor = "orange";
 	removeAllChildNodes(task);
@@ -74,6 +78,7 @@ function removeAllChildNodes(parent) {
 function displayEachTask(todo, i) {
 	let taskButton = document.createElement("div");
 	taskButton.className = "taskButton";
+	taskButton.dataset.task = i;
 	taskButton.id = "task" + i;
 	task.appendChild(taskButton);
 
@@ -86,6 +91,7 @@ function displayEachTask(todo, i) {
 	let taskComplete = document.createElement("img");
 	taskComplete.className = "completeIcon";
 	taskComplete.id = "task" + i + "Complete";
+	taskComplete.dataset.task = i;
 	if (todo.completed == true) {
 		taskComplete.src = "images/checkIcon.svg";
 		taskComplete.alt = "checkIcon";
@@ -135,6 +141,7 @@ function displayEachTask(todo, i) {
 	let deleteIcon = document.createElement("img");
 	deleteIcon.className = "deleteIcon";
 	deleteIcon.id = "task" + i + "Delete";
+	deleteIcon.dataset.task = i;
 	deleteIcon.src = "images/deleteIcon.svg";
 	deleteIcon.alt = "deleteIcon";
 	mainContent.appendChild(deleteIcon);
@@ -174,6 +181,7 @@ function displayEachTask(todo, i) {
 	let editIcon = document.createElement("img");
 	editIcon.className = "editIcon";
 	editIcon.id = "task" + i + "Edit";
+	editIcon.dataset.task = i;
 	editIcon.src = "images/editIcon.svg";
 	editIcon.alt = "editIcon";
 	targetEdit.appendChild(editIcon);

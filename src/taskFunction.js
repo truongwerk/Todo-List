@@ -7,7 +7,7 @@ function taskFunction() {
 	let moduleTodo = getTodo();
 	const task = document.querySelectorAll(".taskButton");
 	task.forEach((element) => {
-		showSubContent(element.id[4]);
+		showSubContent(element.dataset.task);
 	});
 	deleteTask(moduleTodo);
 	completeTask(moduleTodo);
@@ -34,7 +34,7 @@ function deleteTask(moduleTodo) {
 	const deleteIcon = document.querySelectorAll(".deleteIcon");
 	deleteIcon.forEach((element) => {
 		element.addEventListener("click", function () {
-			moduleTodo.splice(element.id[4], 1);
+			moduleTodo.splice(element.dataset.task, 1);
 			setTodo(moduleTodo);
 			window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
 			displayTask(moduleTodo, getMode(), getProject());
@@ -48,10 +48,10 @@ function completeTask(moduleTodo) {
 	const completeIcon = document.querySelectorAll(".completeIcon");
 	completeIcon.forEach((element) => {
 		element.addEventListener("click", function () {
-			if (moduleTodo[element.id[4]].completed == false) {
-				moduleTodo[element.id[4]].completed = true;
+			if (moduleTodo[element.dataset.task].completed == false) {
+				moduleTodo[element.dataset.task].completed = true;
 			} else {
-				moduleTodo[element.id[4]].completed = false;
+				moduleTodo[element.dataset.task].completed = false;
 			}
 			window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
 			displayTask(moduleTodo, getMode(), getProject());

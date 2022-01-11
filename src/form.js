@@ -13,12 +13,33 @@ function showTaskForm() {
 	const taskForm = document.getElementById("taskForm");
 	const addTaskButton = document.getElementById("addTaskButton");
 	addTaskButton.addEventListener("click", function () {
+		updateProject();
 		taskForm.style.display = "flex";
 	});
 	window.addEventListener("click", function (e) {
 		if (e.target == taskForm) {
 			taskForm.style.display = "none";
 		}
+	});
+}
+
+//Update project
+function updateProject() {
+	let moduleProject = getProject();
+	const addToProject = document.getElementById("addToProject");
+	removeAllChildNodes();
+	for (let i = 0; i < moduleProject.length; i++) {
+		const project = document.createElement("option");
+		project.value = moduleProject[i];
+		project.innerText = moduleProject[i];
+		project.className = "projectInput";
+		addToProject.appendChild(project);
+	}
+}
+function removeAllChildNodes() {
+	const project = document.querySelectorAll(".projectInput");
+	project.forEach((element) => {
+		element.parentNode.removeChild(element);
 	});
 }
 

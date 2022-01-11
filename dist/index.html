@@ -21,9 +21,16 @@
 				<label for="addToProject">Project:</label>
 				<select id="addToProject">
 					<option disabled selected value>--Select a Project--</option>
-					<option value="Coding">Coding</option>
 				</select>
-				<button id="input">Add</button>
+				<button id="inputT">Add</button>
+			</form>
+		</div>
+		<div id="projectForm">
+			<form id="newProjectForm" onsubmit="return false">
+				<h1>Add New Project</h1>
+				<label for="inputProject">Project:</label>
+				<input type="text" id="inputProject" required />
+				<button id="inputP">Add</button>
 			</form>
 		</div>
 		<div id="page">
@@ -49,17 +56,7 @@
 						<p class="menuText">This Week</p>
 					</div>
 					<h1>Projects:</h1>
-					<div id="project">
-						<div class="menuButton projectButton" id="project0">
-							<img class="projectCompleteIcon" id="project1Complete" src="images/uncheckIcon.svg" alt="uncheckIcon">
-							<p class="menuText">Coding</p>
-							<img
-								class="projectDeleteIcon"
-								src="images/deleteIcon.svg"
-								alt="delete-Coding"
-							/>
-						</div>
-					</div>
+					<div id="project"></div>
 					<div id="addProjectButton">
 						<img src="images/addIcon.svg" alt="addIcon" /> Add Project
 					</div>
@@ -68,8 +65,6 @@
 					<div id="task"></div>
 					<div id="controlPanel">
 						<button id="addTaskButton">Add Task</button>
-						<button>Delete All Tasks</button>
-						<button>Delete Completed Tasks</button>
 					</div>
 				</div>
 			</div>
