@@ -135,7 +135,8 @@ p {
 	overflow-wrap: break-word;
 }
 
-#taskForm {
+#taskForm,
+#projectForm {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -149,7 +150,8 @@ p {
 	transition: all 0.5s;
 }
 
-#newTaskForm {
+#newTaskForm,
+#newProjectForm {
 	display: flex;
 	flex-flow: column nowrap;
 	padding: 1%;
@@ -159,16 +161,19 @@ p {
 	text-align: center;
 }
 
-#newTaskForm h1 {
+#newTaskForm h1,
+#newProjectForm h1 {
 	margin: 7%;
 	font-size: xx-large;
 	font-weight: bolder;
 }
-#newTaskForm label {
+#newTaskForm label,
+#newProjectForm label {
 	font-size: x-large;
 	font-weight: bold;
 }
-#newTaskForm input {
+#newTaskForm input,
+#newProjectForm input {
 	margin: 5%;
 	font-size: x-large;
 	padding: 2px;
@@ -181,7 +186,8 @@ p {
 	text-align: center;
 	border-radius: 10px;
 }
-#input {
+#inputT,
+#inputP {
 	font-weight: bolder;
 	margin: 5%;
 	font-size: x-large;
@@ -235,8 +241,8 @@ p {
 	width: 60px;
 	background-color: rgb(33, 19, 13);
 	margin: 10px;
-	visibility: hidden;
-	transition:0.1s
+	display: none;
+	transition: 0.1s;
 }
 
 #tabButton:hover {
@@ -255,15 +261,15 @@ p {
 
 @media screen and (max-width: 750px) {
 	#body {
-		flex-flow: column nowrap;
+		flex-flow: column nowrap !important;
 	}
 	#menu {
 		height: auto !important;
 		min-height: 0 !important;
-		width: 100% !important;
+		width: 100%  !important;
 	}
 	#tabButton {
-		visibility: visible;
+		display: block;
 	}
 }
 
@@ -290,12 +296,12 @@ p {
 	font-family: AnonymousPro, "Franklin Gothic Medium", "Arial Narrow", Arial,
 		sans-serif;
 	font-weight: bolder;
-	margin: 20px;
+	margin: 10px;
 }
 
 .menuButton {
 	width: 280px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	padding: 5px;
 	display: flex;
 	flex-flow: row nowrap;
@@ -303,7 +309,7 @@ p {
 	background-color: white;
 	border: 2px black solid;
 	border-radius: 10px;
-	transition:0.1s
+	transition: 0.1s;
 	font-size: large;
 	cursor: pointer;
 }
@@ -330,7 +336,9 @@ p {
 
 .deleteIcon,
 .editIcon,
-.completeIcon {
+.completeIcon,
+.projectDeleteIcon,
+.projectCompleteIcon {
 	transition: 0.1s;
 	width: 30px;
 	height: 30px;
@@ -338,11 +346,14 @@ p {
 
 .deleteIcon:hover,
 .editIcon:hover,
-.completeIcon:hover {
+.completeIcon:hover,
+.projectDeleteIcon:hover,
+.projectCompleteIcon:hover {
 	transform: scale(1.2);
 }
 
-#addProjectButton {
+#addProjectButton,
+#addTaskButton {
 	width: 280px;
 	margin-bottom: 10px;
 	padding: 5px;
@@ -356,6 +367,16 @@ p {
 	font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 	cursor: pointer;
 }
+#addTaskButton {
+	margin-bottom: 10px;
+	justify-content: center;
+}
+
+#controlPanel{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
 
 .taskButton {
 	width: calc(100% - 34px);
@@ -364,7 +385,7 @@ p {
 	background-color: white;
 	border: 2px black solid;
 	border-radius: 10px;
-	transition:0.1s;
+	transition: 0.1s;
 	font-size: large;
 	cursor: pointer;
 }
@@ -381,7 +402,8 @@ p {
 
 .menuButton:hover,
 .taskButton:hover,
-#addProjectButton:hover {
+#addProjectButton:hover,
+#addTaskButton:hover {
 	border-radius: 0;
 	box-shadow: 0 0 1px 1px rgb(107, 107, 107);
 }
@@ -389,13 +411,13 @@ p {
 .subContent {
 	display: none;
 	margin-left: 30px;
-	transition:0.1s
+	transition: 0.1s;
 }
 
-.subContentShow{
+.subContentShow {
 	display: block;
 	margin-left: 30px;
-	transition:0.1s
+	transition: 0.1s;
 }
 
 .targetEdit {
