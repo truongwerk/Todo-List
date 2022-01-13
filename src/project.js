@@ -1,6 +1,5 @@
 import { getTodo, setTodo, getProject, setProject } from ".";
 import changeMode from ".";
-import displayTask from "./display";
 export default projectFunction;
 
 function projectFunction() {
@@ -24,6 +23,7 @@ function showTaskProject() {
 }
 
 function projectSubmit() {
+	const projectForm = document.getElementById("projectForm");
 	let moduleProject = getProject();
 	const newProjectForm = document.getElementById("newProjectForm");
 	newProjectForm.addEventListener("submit", function () {

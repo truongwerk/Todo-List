@@ -74,6 +74,7 @@ function removeAllChildNodes(parent) {
 
 // Display  Each Task
 function displayEachTask(todo, i) {
+	const task = document.getElementById("task");
 	let taskButton = document.createElement("div");
 	taskButton.className = "taskButton";
 	taskButton.dataset.task = i;

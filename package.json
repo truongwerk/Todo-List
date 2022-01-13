@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/truongwerk/Todo-List#readme",
   "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-google": "^0.14.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },

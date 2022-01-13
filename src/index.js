@@ -2,7 +2,6 @@ import displayTask from "./display";
 import taskForm from "./form";
 import taskFunction from "./taskFunction";
 import projectFunction from "./project";
-// import makeTestTodo from "./testTodo";
 export const getTodo = () => myTodo;
 export const setTodo = (newTodo) => (myTodo = newTodo);
 export const getProject = () => project;
@@ -38,8 +37,9 @@ function changeMode() {
 	const menuButton = document.querySelectorAll(".menuButton");
 	for (let i = 0; i < menuButton.length; i++) {
 		menuButton[i].addEventListener("click", function () {
-			for (let i = 0; i < menuButton.length; i++) {}
-			mode = menuButton[i].id;
+			for (let i = 0; i < menuButton.length; i++) {
+				mode = menuButton[i].id;
+			}
 			displayTask(myTodo, mode, project);
 			taskFunction();
 		});
