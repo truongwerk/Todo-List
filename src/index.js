@@ -2,7 +2,7 @@ import displayTask from "./display";
 import taskForm from "./form";
 import taskFunction from "./taskFunction";
 import projectFunction from "./project";
-import makeTestTodo from "./testTodo";
+// import makeTestTodo from "./testTodo";
 export const getTodo = () => myTodo;
 export const setTodo = (newTodo) => (myTodo = newTodo);
 export const getProject = () => project;
@@ -31,7 +31,7 @@ mobileMenu();
 //Add task
 
 taskForm();
-makeTestTodo();
+// makeTestTodo();
 
 //Change display mode
 function changeMode() {
