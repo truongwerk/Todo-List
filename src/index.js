@@ -37,9 +37,7 @@ function changeMode() {
 	const menuButton = document.querySelectorAll(".menuButton");
 	for (let i = 0; i < menuButton.length; i++) {
 		menuButton[i].addEventListener("click", function () {
-			for (let i = 0; i < menuButton.length; i++) {
-				mode = menuButton[i].id;
-			}
+			mode = menuButton[i].id;
 			displayTask(myTodo, mode, project);
 			taskFunction();
 		});
