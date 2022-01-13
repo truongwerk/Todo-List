@@ -136,7 +136,8 @@ p {
 }
 
 #taskForm,
-#projectForm {
+#projectForm,
+#editForm {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -151,7 +152,8 @@ p {
 }
 
 #newTaskForm,
-#newProjectForm {
+#newProjectForm,
+#editTaskForm {
 	display: flex;
 	flex-flow: column nowrap;
 	padding: 1%;
@@ -162,32 +164,37 @@ p {
 }
 
 #newTaskForm h1,
-#newProjectForm h1 {
+#newProjectForm h1,
+#editTaskForm h1 {
 	margin: 7%;
 	font-size: xx-large;
 	font-weight: bolder;
 }
 #newTaskForm label,
-#newProjectForm label {
+#newProjectForm label,
+#editTaskForm label {
 	font-size: x-large;
 	font-weight: bold;
 }
 #newTaskForm input,
-#newProjectForm input {
+#newProjectForm input,
+#editTaskForm input {
 	margin: 5%;
 	font-size: x-large;
 	padding: 2px;
 	font-weight: bold;
 	border-radius: 10px;
 }
-#addToProject {
+#addToProject,
+#editProject {
 	margin: 5%;
 	font-size: x-large;
 	text-align: center;
 	border-radius: 10px;
 }
 #inputT,
-#inputP {
+#inputP,
+#editT {
 	font-weight: bolder;
 	margin: 5%;
 	font-size: x-large;
@@ -266,7 +273,7 @@ p {
 	#menu {
 		height: auto !important;
 		min-height: 0 !important;
-		width: 100%  !important;
+		width: 100% !important;
 	}
 	#tabButton {
 		display: block;
@@ -353,7 +360,8 @@ p {
 }
 
 #addProjectButton,
-#addTaskButton {
+#addTaskButton,
+#loadTestButton {
 	width: 280px;
 	margin-bottom: 10px;
 	padding: 5px;
@@ -367,14 +375,16 @@ p {
 	font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 	cursor: pointer;
 }
-#addTaskButton {
+#addTaskButton,
+#loadTestButton {
 	margin-bottom: 10px;
 	justify-content: center;
 }
 
-#controlPanel{
+#controlPanel {
 	width: 100%;
 	display: flex;
+	flex-flow: row wrap;
 	justify-content: space-around;
 }
 
@@ -403,7 +413,8 @@ p {
 .menuButton:hover,
 .taskButton:hover,
 #addProjectButton:hover,
-#addTaskButton:hover {
+#addTaskButton:hover,
+#loadTestButton:hover {
 	border-radius: 0;
 	box-shadow: 0 0 1px 1px rgb(107, 107, 107);
 }

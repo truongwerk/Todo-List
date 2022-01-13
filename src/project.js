@@ -82,7 +82,10 @@ function projectDelete() {
 		element.addEventListener("click", function () {
 			let moduleTodo = getTodo();
 			let moduleProject = getProject();
-			if (confirm("Delete" + moduleProject[element.dataset.project]) == true) {
+			if (
+				confirm("Delete " + moduleProject[element.dataset.project] + "?") ==
+				true
+			) {
 				for (let i = 0; i < moduleTodo.length; i++) {
 					if (moduleTodo[i].project == moduleProject[element.dataset.project]) {
 						moduleTodo.splice(i, 1);

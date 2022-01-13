@@ -20,9 +20,25 @@
 				<input type="text" id="inputDescription" />
 				<label for="addToProject">Project:</label>
 				<select id="addToProject">
-					<option disabled selected value>--Select a Project--</option>
+					<option value="" selected value>--Select a Project--</option>
 				</select>
 				<button id="inputT">Add</button>
+			</form>
+		</div>
+		<div id="editForm">
+			<form id="editTaskForm" onsubmit="return false">
+				<h1>Edit Task</h1>
+				<label for="editTask">Task:</label>
+				<input type="text" id="editTask" required />
+				<label for="editDate">Target Date:</label>
+				<input type="date" id="editDate" />
+				<label for="editDescription">Description:</label>
+				<input type="text" id="editDescription" />
+				<label for="editProject">Project:</label>
+				<select id="editProject">
+					<option value="">--None--</option>
+				</select>
+				<button id="editT">Change</button>
 			</form>
 		</div>
 		<div id="projectForm">
@@ -65,6 +81,7 @@
 					<div id="task"></div>
 					<div id="controlPanel">
 						<button id="addTaskButton">Add Task</button>
+						<button id="loadTestButton">Load Test</button>
 					</div>
 				</div>
 			</div>
@@ -75,7 +92,6 @@
 				/></a>
 			</div>
 		</div>
-		<!-- <script type="module" src="../src/index.js"></script> -->
 		<script src="main.js"></script>
 	</body>
 </html>

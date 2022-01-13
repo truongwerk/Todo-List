@@ -4,32 +4,30 @@ export default displayTask;
 
 function displayTask(myTodo, mode, project) {
 	const task = document.getElementById("task");
+	removeAllChildNodes(task);
 	const menuButton = document.querySelectorAll(".menuButton");
 	for (let i = 0; i < menuButton.length; i++) {
 		menuButton[i].style.color = null;
 		menuButton[i].style.borderColor = null;
 	}
-	let highlightButton = document.getElementById(mode);
-	if (highlightButton == null) {
-		highlightButton = document.getElementById("allButton");
-		mode = "allButton";
-	}
-	highlightButton.style.color = "red";
-	highlightButton.style.borderColor = "orange";
-	removeAllChildNodes(task);
-	switch (mode) {
-		case "allButton":
-			displayAll(myTodo);
-			break;
-		case "todayButton":
-			displayToday(myTodo);
-			break;
-		case "thisWeekButton":
-			displayThisWeek(myTodo);
-			break;
-		default:
-			displayProjectTask(myTodo, project[mode.slice(7)]);
-			break;
+	const highlightButton = document.getElementById(mode);
+	if (highlightButton != null) {
+		highlightButton.style.color = "red";
+		highlightButton.style.borderColor = "orange";
+		switch (mode) {
+			case "allButton":
+				displayAll(myTodo);
+				break;
+			case "todayButton":
+				displayToday(myTodo);
+				break;
+			case "thisWeekButton":
+				displayThisWeek(myTodo);
+				break;
+			default:
+				displayProjectTask(myTodo, project[mode.slice(7)]);
+				break;
+		}
 	}
 }
 

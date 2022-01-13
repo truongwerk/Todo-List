@@ -11,6 +11,7 @@ function taskFunction() {
 	});
 	deleteTask(moduleTodo);
 	completeTask(moduleTodo);
+	editTask();
 }
 
 //Show and hide sub content
@@ -58,5 +59,66 @@ function completeTask(moduleTodo) {
 			setTodo(moduleTodo);
 			taskFunction();
 		});
+	});
+}
+
+function editTask() {
+	const editForm = document.getElementById("editForm");
+	const editIcon = document.querySelectorAll(".editIcon");
+	editIcon.forEach((element) => {
+		element.addEventListener("click", function () {
+			updateEditForm(element.dataset.task);
+			editForm.style.display = "flex";
+		});
+	});
+	window.addEventListener("click", function (e) {
+		if (e.target == editForm) {
+			editForm.style.display = "none";
+		}
+	});
+}
+
+function updateEditForm(i) {
+	let moduleTodo = getTodo();
+	const editTask = document.getElementById("editTask");
+	editTask.value = moduleTodo[i].task;
+	const editDate = document.getElementById("editDate");
+	editDate.value = moduleTodo[i].targetDate;
+	const editDescription = document.getElementById("editDescription");
+	editDescription.value = moduleTodo[i].description;
+	const editProject = document.getElementById("editProject");
+	updateProject(moduleTodo[i].project);
+	const editTaskForm = document.getElementById("editTaskForm");
+	editTaskForm.addEventListener("submit", function () {
+		moduleTodo[i].task = editTask.value;
+		moduleTodo[i].targetDate = editDate.value;
+		moduleTodo[i].description = editDescription.value;
+		moduleTodo[i].project = editProject.value;
+		setTodo(moduleTodo);
+		window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
+		displayTask(moduleTodo, getMode(), getProject());
+		document.getElementById("editForm").style.display = "none";
+		taskFunction()
+	});
+}
+
+//Update project
+function updateProject(oldProject) {
+	let moduleProject = getProject();
+	const editProject = document.getElementById("editProject");
+	removeAllChildNodes();
+	for (let i = 0; i < moduleProject.length; i++) {
+		const project = document.createElement("option");
+		project.value = moduleProject[i];
+		project.innerText = moduleProject[i];
+		project.className = "projectEdit";
+		editProject.appendChild(project);
+	}
+	editProject.value = oldProject;
+}
+function removeAllChildNodes() {
+	const project = document.querySelectorAll(".projectEdit");
+	project.forEach((element) => {
+		element.parentNode.removeChild(element);
 	});
 }

@@ -2,6 +2,7 @@ import displayTask from "./display";
 import taskForm from "./form";
 import taskFunction from "./taskFunction";
 import projectFunction from "./project";
+import makeTestTodo from "./testTodo";
 export const getTodo = () => myTodo;
 export const setTodo = (newTodo) => (myTodo = newTodo);
 export const getProject = () => project;
@@ -26,8 +27,11 @@ projectFunction();
 taskFunction();
 changeMode();
 mobileMenu();
+
 //Add task
+
 taskForm();
+makeTestTodo();
 
 //Change display mode
 function changeMode() {
@@ -46,10 +50,10 @@ function mobileMenu() {
 	const tabButton = document.getElementById("tabButton");
 	const menu = document.getElementById("menu");
 	tabButton.addEventListener("click", function () {
-		if (menu.style.display == "flex") {
-			menu.setAttribute("style", "display:none");
-		} else {
+		if (menu.style.display == "none") {
 			menu.setAttribute("style", "display:flex");
+		} else {
+			menu.setAttribute("style", "display:none");
 		}
 	});
 }

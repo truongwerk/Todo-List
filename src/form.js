@@ -58,7 +58,6 @@ function submitNewTodo(moduleTodo) {
 	displayTask(moduleTodo, getMode(), getProject());
 	taskFunction();
 	window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
-	console.log(localStorage);
 }
 
 //function factory
