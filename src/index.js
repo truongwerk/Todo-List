@@ -28,7 +28,6 @@ projectFunction();
 changeMode();
 mobileMenu();
 
-
 //Change display mode
 function changeMode() {
 	const menuButton = document.querySelectorAll(".menuButton");
