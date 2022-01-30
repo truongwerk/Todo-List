@@ -31,6 +31,13 @@ function displayTask(myTodo, mode, project) {
 	}
 }
 
+//Remove old task
+function removeAllChildNodes(parent) {
+	while (parent.firstChild) {
+		parent.removeChild(parent.firstChild);
+	}
+}
+
 //Display mode All
 function displayAll(myTodo) {
 	for (let i = 0; i < myTodo.length; i++) {
@@ -62,13 +69,6 @@ function displayProjectTask(myTodo, project) {
 		if (myTodo[i].project == project) {
 			displayEachTask(myTodo[i], i);
 		}
-	}
-}
-
-//Remove old task
-function removeAllChildNodes(parent) {
-	while (parent.firstChild) {
-		parent.removeChild(parent.firstChild);
 	}
 }
 

@@ -21,16 +21,13 @@ if (window.localStorage.getItem("project")) {
 }
 
 // First display
+taskForm();
 displayTask(myTodo, mode, project);
-projectFunction();
 taskFunction();
+projectFunction();
 changeMode();
 mobileMenu();
 
-//Add task
-
-taskForm();
-// makeTestTodo();
 
 //Change display mode
 function changeMode() {

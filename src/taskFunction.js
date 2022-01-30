@@ -19,8 +19,8 @@ function showSubContent(i) {
 	const taskContent = document.getElementById("task" + i + "Content");
 	const taskDueDate = document.getElementById("task" + i + "DueDate");
 	const subContent = document.getElementById("task" + i + "Sub");
-	taskContent.addEventListener("click", show);
-	taskDueDate.addEventListener("click", show);
+	taskContent.onclick = show;
+	taskDueDate.onclick = show;
 	function show() {
 		if (subContent.className == "subContent") {
 			subContent.className = "subContentShow";
@@ -34,13 +34,13 @@ function showSubContent(i) {
 function deleteTask(moduleTodo) {
 	const deleteIcon = document.querySelectorAll(".deleteIcon");
 	deleteIcon.forEach((element) => {
-		element.addEventListener("click", function () {
+		element.onclick = function () {
 			moduleTodo.splice(element.dataset.task, 1);
 			setTodo(moduleTodo);
 			window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
 			displayTask(moduleTodo, getMode(), getProject());
 			taskFunction();
-		});
+		};
 	});
 }
 
@@ -48,17 +48,17 @@ function deleteTask(moduleTodo) {
 function completeTask(moduleTodo) {
 	const completeIcon = document.querySelectorAll(".completeIcon");
 	completeIcon.forEach((element) => {
-		element.addEventListener("click", function () {
+		element.onclick = function () {
 			if (moduleTodo[element.dataset.task].completed == false) {
 				moduleTodo[element.dataset.task].completed = true;
 			} else {
 				moduleTodo[element.dataset.task].completed = false;
 			}
+			setTodo(moduleTodo);
 			window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
 			displayTask(moduleTodo, getMode(), getProject());
-			setTodo(moduleTodo);
 			taskFunction();
-		});
+		};
 	});
 }
 
@@ -66,16 +66,16 @@ function editTask() {
 	const editForm = document.getElementById("editForm");
 	const editIcon = document.querySelectorAll(".editIcon");
 	editIcon.forEach((element) => {
-		element.addEventListener("click", function () {
+		element.onclick = function () {
 			updateEditForm(element.dataset.task);
 			editForm.style.display = "flex";
-		});
+		};
 	});
-	window.addEventListener("click", function (e) {
+	window.onclick = function (e) {
 		if (e.target == editForm) {
 			editForm.style.display = "none";
 		}
-	});
+	};
 }
 
 function updateEditForm(i) {
@@ -89,7 +89,7 @@ function updateEditForm(i) {
 	const editProject = document.getElementById("editProject");
 	updateProject(moduleTodo[i].project);
 	const editTaskForm = document.getElementById("editTaskForm");
-	editTaskForm.addEventListener("submit", function () {
+	editTaskForm.onsubmit = function () {
 		moduleTodo[i].task = editTask.value;
 		moduleTodo[i].targetDate = editDate.value;
 		moduleTodo[i].description = editDescription.value;
@@ -97,9 +97,10 @@ function updateEditForm(i) {
 		setTodo(moduleTodo);
 		window.localStorage.setItem("myTodo", JSON.stringify(moduleTodo));
 		displayTask(moduleTodo, getMode(), getProject());
+		taskFunction();
 		document.getElementById("editForm").style.display = "none";
-		taskFunction()
-	});
+		return false;
+	};
 }
 
 //Update project
@@ -111,7 +112,6 @@ function updateProject(oldProject) {
 		const project = document.createElement("option");
 		project.value = moduleProject[i];
 		project.innerText = moduleProject[i];
-		project.className = "projectEdit";
 		editProject.appendChild(project);
 	}
 	editProject.value = oldProject;
