@@ -112,6 +112,7 @@ function updateProject(oldProject) {
 		const project = document.createElement("option");
 		project.value = moduleProject[i];
 		project.innerText = moduleProject[i];
+		project.classList = "projectEdit";
 		editProject.appendChild(project);
 	}
 	editProject.value = oldProject;
