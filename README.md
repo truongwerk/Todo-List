@@ -18,5 +18,5 @@
 
 - Vanilla JavaScript.
 - Vanilla Css.
-- Functional programming, module approach.
+- Modules.
 - Build by webpack.
