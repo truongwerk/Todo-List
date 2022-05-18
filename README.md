@@ -18,5 +18,5 @@
 
 - Vanilla JavaScript.
 - Vanilla Css.
-- Modules.
-- Build by webpack.
+- JS Modules.
+- Build by Webpack.
